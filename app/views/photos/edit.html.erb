@@ -1,0 +1,26 @@
+<h1>Editing Photo #<%= @photo.id %></h1>
+
+
+<%= form_tag(photo_url(@photo), method: 'put') do %>
+
+  <div>
+    <%= label_tag :user_id %><br />
+    <%= number_field_tag :user_id, @photo.user_id %>
+  </div>
+
+  <div>
+    <%= label_tag :source_url %><br />
+    <%= text_field_tag :source_url, @photo.source_url %>
+  </div>
+
+  <div>
+    <%= label_tag :t.integer %><br />
+    <%= text_field_tag :t.integer, @photo.t.integer %>
+  </div>
+
+  
+  <div>
+    <%= submit_tag "Update Photo" %>
+  </div>
+
+<% end %>

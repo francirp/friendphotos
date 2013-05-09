@@ -1,0 +1,35 @@
+
+
+<div class="row">
+  <%= form_tag(photos_url, method: 'get', :class => 'form-horizontal span6 offset2') do %>
+
+    <div class="control-group">
+      <%= label_tag :uid, "Select a Friend:", :class => "control-label" %>
+        <div class="controls">
+          <%= select_tag :uid, options_from_collection_for_select(@fb_friends, :uid, :name, @chosen_uid) %>
+        <div>
+    </div>
+    </div>
+    </div>
+
+    <div>
+      <button type="submit" class="btn btn-success span3 offset1">See Friendship Photos</button>
+    </div>
+  <% end %>
+</div>
+
+<br />
+
+<div class="row clearfix">
+  <ul class="thumbnails">
+    <% @fb_photos.each do |photo| %>
+    <li class="span4">
+    <a href="#" class="thumbnail">
+      <img data-src="holder.js/300x200">
+      <%= image_tag photo.source_url, :class => "new_photo" %>
+    </a>
+    </li>
+    <% end %>
+  </ul>
+</div>
+
