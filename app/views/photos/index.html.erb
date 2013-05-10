@@ -26,7 +26,8 @@
     <li class="span4">
     <a href="#" class="thumbnail">
       <img data-src="holder.js/300x200">
-      <%= image_tag photo.source_url, :class => "new_photo" %>
+        <div class="new_photo" style="background-image: url(<%= photo.source_url %>); background-size: 290px auto">
+        </div>
     </a>
     </li>
     <% end %>
